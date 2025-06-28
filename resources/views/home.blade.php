@@ -7,13 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     @vite('resources/css/app.css')
+    @vite('resources/js/script.js')
 </head>
 
 <body>
-    <div id="navbar" class=" px-6 py-3 fixed top-0 w-full">
-        <div class="flex justify-between text-white ">
-            <h1 class="text-2xl font-medium">DigiBlast</h1>
-            <div class="hidden sm:flex items-center gap-6">
+    <div id="navbar" class="fixed top-0 z-50 w-full">
+        <div class="flex justify-between text-white">
+            <h1 class="text-2xl font-medium p-6">DigiBlast</h1>
+            <div class="hidden sm:flex items-center gap-6 sm:px-4">
                 <a href="#section-about">About</a>
                 <a href="#section-pricing">Pricing</a>
                 <a href="#footer">Contact</a>
@@ -21,27 +22,45 @@
                     <a href="" class="button button-transparent">Sign Up</a>
                 </div>
             </div>
+            <button id="menu-bars" class=" p-6 relative z-10 text-3xl top-0 sm:hidden"><i
+                    class="fa-solid fa-bars icon-bar"></i></button>
+            <div id="mobile-menu" class="sm:hidden flex absolute bg-white text-black w-full h-screen">
+                <div class="flex flex-col items-start gap-6 absolute p-7">
+                    <div class="flex gap-5"><a href="" class="button button-success">Sign In</a>
+                        <a href="" class="button button-transparent">Sign Up</a>
+                    </div>
+                    <a href="#section-about">About</a>
+                    <a href="#section-pricing">Pricing</a>
+                    <a href="#footer">Contact</a>
+
+                </div>
+            </div>
+
         </div>
     </div>
     <div id="hero-section"
-        class="bg-gradient-to-t text-white from-black to-primary min-h-screen flex justify-between items-center pt-10">
-        <div class="shrink-0 max-w-1/2 px-10 ">
-            <h2 class="text-5xl">One Click For Everyone</h2>
-            <p class="text-base text-stone-300 pb-5">DIGABLAST is a powerful tool that lets you send personalized
+        class="relative overflow-hidden bg-gradient-to-t text-white from-black to-primary min-h-screen flex sm:flex-nowrap justify-between items-center gap-2 sm:pt-10">
+        <div class="cube -z-0 rotate-45 top-0 -left-44"></div>
+        <div class="cube -z-0 rotate-[60deg] bottom-0 opacity- -right-44"></div>
+        <div class="sm:pl-10 text-center sm:text-start relative ">
+            <h2 class=" text-5xl pb-5">One Click For Everyone</h2>
+            <p class="text-base text-stone-300 pb-5 px-7 sm:px-0">DIGABLAST is a powerful tool that lets you send
+                personalized
                 WhatsApp
                 messages to multiple contacts with a single click — no copy-pasting, no repetitive work.</p>
             <a href="" class="button button-white ">Learn More <span><i class="fa-solid fa-angle-right"></i></span></a>
         </div>
-        <img class="h-auto w-1/2" src="/images/hero.png" alt="">
+        <img class="hidden relative z-10 sm:block h-auto sm:w-1/2" src="/images/hero.png" alt="">
+        
     </div>
 
-    <div id="section-about" class="bg-black min-h-screen text-white pt-12">
-        <h2 class="text-center text-5xl py-10">About</h2>
-        <div class="flex items-center gap-10 justify-center">
-            <img class="max-w-1/2 h-auto" src="/images/hero.png" alt="">
-            <div class="flex-col flex gap-5">
-                <div class="flex items-center gap-2">
-                    <div class=" w-13 h-13 flex justify-center items-center">
+    <div id="section-about" class="bg-black sm:min-h-screen text-white pb-5 sm:pb-0 sm:pt-20">
+        <h2 class="text-center text-5xl pb-10" data-aos="fade-up">About</h2>
+        <div class="flex flex-wrap items.start sm:items-center gap-10 justify-center">
+            <img class="hidden sm:block sm:max-w-1/2 h-auto" src="/images/hero.png" alt="" data-aos="fade-up">
+            <div class="flex-col flex gap-5 px-5">
+                <div class="flex items-center gap-2" data-aos="fade-up">
+                    <div class="w-[50px] flex justify-center items-center">
                         <i class="fa-solid fa-arrow-pointer text-4xl "></i>
                     </div>
                     <div class="">
@@ -49,18 +68,17 @@
                         <p class="text-stone-300">Send your message to many contacts instantly.</p>
                     </div>
                 </div>
-                <div class="flex items-center gap-2">
-                    <div class="w-13 h-13 flex justify-center items-center"> <i
-                            class="fa-solid fa-clipboard-check text-4xl "></i></div>
-
+                <div class="flex items-center gap-2" data-aos="fade-up">
+                    <div class=" w-[50px] flex justify-center items-center"><i
+                            class="fa-solid fa-clipboard-check text-4xl"></i></div>
                     <div class="">
                         <h3 class="text-xl">Easy to Use</h3>
                         <p class="text-stone-300">No technical skills required. Just upload your contacts and message.
                         </p>
                     </div>
                 </div>
-                <div class="flex items-center gap-2">
-                    <div class="w-13 h-13 flex justify-center items-center"> <i class="fa-solid fa-bolt text-4xl"></i>
+                <div class="flex items-center gap-2" data-aos="fade-up">
+                    <div class="w-[50px]  flex justify-center items-center"> <i class="fa-solid fa-bolt text-4xl"></i>
                     </div>
 
                     <div class="">
@@ -72,10 +90,12 @@
         </div>
     </div>
 
-    <div id="section-pricing" class="bg-gradient-to-t from-primary to-black  min-h-screen text-white py-12">
-        <h2 class="text-center text-5xl py-10">Pricing</h2>
-        <div class="flex items-center justify-center flex-wrap gap-6">
-            <div
+    <div id="section-pricing"
+        class="relative overflow-hidden bg-gradient-to-t from-primary to-black  min-h-screen text-white  py-5  sm:py-20">
+
+        <h2 class="text-center text-5xl pb-10" data-aos="fade-up">Pricing</h2>
+        <div class="flex items-center justify-center flex-col sm:flex-row gap-6 px-3">
+            <div data-aos="fade-up"
                 class="min-h-80 w-60 px-1 border-white border rounded-xl flex flex-col items-center p-2 justify-between">
                 <div class="flex flex-col items-center gap-2">
                     <h3 class="text-2xl">Basic</h3>
@@ -96,7 +116,7 @@
                     </span>
                 </a>
             </div>
-            <div
+            <div data-aos="fade-up"
                 class="min-h-96 w-60 px-1 shadow-[0_0_10px_#fff] border-white border rounded-xl flex flex-col items-center p-2 justify-between">
                 <div class="flex flex-col items-center gap-2">
                     <h3 class="text-2xl text-center">Pro<br>Best Offer</h3>
@@ -117,7 +137,7 @@
                 </a>
             </div>
 
-            <div
+            <div data-aos="fade-up"
                 class="min-h-80 w-60 px-1 border-white border rounded-xl flex flex-col items-center p-2 justify-between">
                 <div class="flex flex-col items-center gap-2">
                     <h3 class="text-2xl">Business</h3>
@@ -137,11 +157,13 @@
                 </a>
             </div>
         </div>
+            <div class="cube -z-0 rotate-45 bottom-0 -left-44"></div>
+        <div class="cube -z-0 rotate-[60deg] top-0 opacity- -right-44"></div>
     </div>
 
     <div id="cta" class="min-h-52 bg-white flex justify-center items-center flex-col text-center">
-        <h1 class="text-4xl font-medium">Simplify Your WhatsApp Communication Today.</h1>
-        <h2 class="text-base text-stone-400">Reach more people, faster — with just one click.</h2>
+        <h1 class="text-4xl font-medium" >Simplify Your WhatsApp Communication Today.</h1>
+        <h2 class="text-base text-stone-400" >Reach more people, faster — with just one click.</h2>
     </div>
 
     <div id="footer" class="min-h-32 bg-black text-white py-10 px-5">
@@ -163,6 +185,10 @@
             </div>
         </div>
     </div>
+
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 
