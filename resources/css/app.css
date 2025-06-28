@@ -12,11 +12,11 @@
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
         "Noto Color Emoji";
     --font-general: "generalsans";
-    --color-success : #4ADE80;
-    --color-warning : #FBBF24;
-    --color-error : #DC2626;
-    --color-info: #2563EB;
-    --color-primary : #112817
+    --color-success: #4ade80;
+    --color-warning: #fbbf24;
+    --color-error: #dc2626;
+    --color-info: #2563eb;
+    --color-primary: #112817;
 }
 
 @font-face {
@@ -26,3 +26,81 @@
     display: swap;
     src: url("/public/fonts/GeneralSans-Variable.ttf") format("truetype");
 }
+
+.button {
+    padding: 5px 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.button-success {
+    background-color: var(--color-success);
+}
+
+.button-transparent {
+    border: 1px solid var(--color-success);
+}
+
+.button-white {
+    border: 1px solid white;
+}
+
+.button-solid-white {
+    background-color: #fff;
+    color: var(--color-primary);
+}
+
+#mobile-menu {
+    /*display: none;
+    */
+    left: -100%;
+    transition: all ease-in-out 0.3s;
+    -webkit-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+    -ms-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+}
+
+#mobile-menu.show {
+    display: flex;
+    left: 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+.icon-bar {
+    transition: all ease-in-out 0.5s;
+    -webkit-transition: all ease-in-out 0.5s;
+    -moz-transition: all ease-in-out 0.5s;
+    -ms-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
+}
+
+.icon-bar.active {
+    color: black;
+}
+
+.cube {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    background: var(--color-primary);
+    opacity: 0.5;
+    filter: blur(20px);
+    -webkit-filter: blur(20px);
+}
+
+/* *{
+    border: 1px solid red;
+} */
