@@ -17,7 +17,9 @@
     --color-error: #dc2626;
     --color-info: #2563eb;
     --color-primary: #112817;
-    --color-white-transparent : #ffffff15;
+    --color-white-transparent: #ffffff15;
+    --color-black: #000000;
+    --color-black2: #090909;
 }
 
 @font-face {
@@ -29,7 +31,9 @@
 }
 
 .button {
-    padding: 5px 20px;
+    padding: 0 15px;
+    font-size: small;
+    padding-block: calc(var(--spacing) * 1.5);
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -42,17 +46,40 @@
     -o-transition: all ease-in-out 0.3s;
 }
 
-Button:hover{
+Button:hover {
     cursor: pointer;
+}
 
+.button-primary {
+    background-color: var(--color-primary);
+}
+
+.button-primary:hover {
+    background-color: #0b1a0f;
 }
 
 .button-success {
     background-color: var(--color-success);
 }
 
-.button-success:hover{
+.button-warning {
+    background-color: var(--color-warning);
+}
+
+.button-error {
+    background-color: var(--color-error);
+}
+
+.button-success:hover {
     background: #39a661;
+}
+
+.button-warning:hover {
+    background: #e4ad20;
+}
+
+.button-error:hover {
+    background: #c32222;
 }
 
 .button-transparent {
@@ -116,6 +143,58 @@ Button:hover{
     -webkit-filter: blur(20px);
 }
 
-*{
+#sidebar {
+    /* min-width: calc(var(--spacing) * 60); */
+    width: auto;
+}
+
+#sidebar.expand-menu {
+    min-width: calc(var(--spacing) * 60);
+}
+
+#sidebar a {
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+#sidebar.collapse-menu {
+    width: 70px;
+    align-items: center;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.empty-sidebar {
+    /* z-index: 99; */
+    flex-shrink: 0;
+    width: 70px;
+}
+
+.hidden-menu {
+    display: none;
+}
+
+* {
     /* border: 1px solid red; */
+}
+
+.no-scroball {
+    scrollbar-width: none;
+}
+
+body {
+    min-height: 100vh;
+}
+
+
+.dialog-box{
+    display:none
+}
+
+.dialog-box.show{
+    display: flex;
 }
